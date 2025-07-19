@@ -50,6 +50,40 @@
                 display: block;
             }
         }
+        /* Estilos para el botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  display: flex; /* Para centrar el ícono */
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 5px #777;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+}
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -174,6 +208,14 @@
             </div>
         </div>
     </section>
+
+    <a
+  href="https://wa.me/593992648781?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20sus%20servicios."
+  class="whatsapp-float"
+  target="_blank"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
     <footer class="bg-gray-800 text-gray-400 py-8">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
