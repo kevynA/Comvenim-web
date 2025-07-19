@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web - COMVENIM: Tu Presencia Digital, Nuestra Innovación</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-desarrollo {
+            background-image: url('URL_DE_IMAGEN_DE_FONDO_DESARROLLO_WEB.jpg'); /* ¡IMPORTANTE! Reemplaza con tu propia imagen */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 60vh; /* Altura más compacta para secciones internas */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-desarrollo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor lectura del texto */
+            z-index: 1;
+        }
+        .hero-desarrollo > div {
+            z-index: 2;
+        }
+        .card-service {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="bg-gray-900 text-white p-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Convenim - Logo en letras blancas - sin fondo.png" alt="COMVENIM" class="h-10 mr-3">
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-blue-400 transition">COMVENIM</a>
+            </div>
+            <nav class="nav-menu">
+                <ul class="flex space-x-6 md:flex-row flex-col md:space-y-0 space-y-4 p-4 md:p-0">
+                    <li><a href="index.html#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+                    <li><a href="index.html#servicios" class="hover:text-blue-400 transition">Servicios</a></li>
+                    <li><a href="index.html#planes" class="hover:text-blue-400 transition">Planes</a></li>
+                    <li><a href="index.html#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu-icon md:hidden cursor-pointer text-2xl">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-desarrollo text-white pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-in-up">
+                Desarrollo Web: <span class="text-blue-400">Tu Universo Digital Comienza Aquí.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                No solo creamos sitios web; construimos experiencias que capturan, conectan y convierten.
+                En 2025, tu presencia online es tu activo más valioso.
+            </p>
+            <a href="#nuestros-servicios-detalle" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Explora lo que podemos crear para ti
+            </a>
+        </div>
+    </section>
+
+    <div class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-4xl font-bold mb-6 text-white">
+                        ¿Por qué tu negocio necesita una <span class="text-blue-400">presencia digital sólida</span>?
+                    </h2>
+                    <p class="text-lg mb-4 leading-relaxed">
+                        En la era actual, si no estás online, simplemente no existes para una gran parte de tus clientes potenciales.
+                        Una página web no es solo un escaparate; es tu oficina 24/7, tu tarjeta de presentación global y tu herramienta de ventas más poderosa.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Te ayudamos a destacar, generando confianza y credibilidad con un diseño profesional y funcional que habla directamente a tu audiencia.
+                        Es la inversión más inteligente para el crecimiento y la visibilidad de tu marca.
+                    </p>
+                </div>
+                <div>
+                    <img src="URL_DE_IMAGEN_DE_EQUIPO_TRABAJANDO.jpg" alt="Equipo trabajando en desarrollo web" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="nuestros-servicios-detalle" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-12">Nuestros Servicios de Desarrollo Web a tu Medida</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-blue-600">
+                    <i class="fas fa-desktop text-blue-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Páginas Web Profesionales</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Tu tarjeta de presentación digital. Creamos sitios web corporativos y personales que impactan, informan y construyen tu marca.
+                        Diseños modernos, adaptables a cualquier dispositivo y optimizados para el mejor rendimiento.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Diseño 100% responsivo</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización SEO básica</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Integración con redes sociales</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Galería de imágenes y contacto</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-green-600">
+                    <i class="fas fa-globe text-green-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Sitios Web a Medida</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Más allá de lo básico. Desarrollamos sitios con funcionalidades avanzadas, bases de datos, sistemas de reserva, foros o portales interactivos.
+                        Soluciones únicas para necesidades específicas de tu negocio.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Funcionalidades personalizadas</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Integración con APIs de terceros</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Gestión de usuarios y contenidos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Seguridad y escalabilidad garantizadas</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-purple-600">
+                    <i class="fas fa-shopping-cart text-purple-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Tiendas Digitales (E-commerce)</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Abre tu negocio al mundo 24/7. Creamos tiendas online robustas, seguras y fáciles de gestionar,
+                        listas para vender tus productos o servicios de forma eficiente.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Catálogo de productos ilimitado</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Múltiples pasarelas de pago (PayPal, Stripe, etc.)</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Gestión de inventario y pedidos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Carrito de compras intuitivo</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-yellow-600">
+                    <i class="fas fa-tools text-yellow-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Mantenimiento y Soporte</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Tu sitio web siempre actualizado y seguro. Ofrecemos planes de mantenimiento para garantizar el óptimo funcionamiento,
+                        la seguridad y la relevancia de tu plataforma digital.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Actualizaciones de seguridad</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Respaldo de información</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Monitoreo de rendimiento</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Soporte técnico especializado</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-red-600">
+                    <i class="fas fa-chart-line text-red-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Optimización SEO</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Haz que tus clientes te encuentren. Mejoramos la visibilidad de tu sitio web en los motores de búsqueda
+                        para atraer más tráfico orgánico y clientes potenciales.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Investigación de palabras clave</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización on-page y técnica</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Creación de contenido estratégico</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Monitoreo y reportes de rendimiento</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-teal-600">
+                    <i class="fas fa-lightbulb text-teal-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Consultoría Digital</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Asesoramiento experto para tu estrategia online. Te guiamos para tomar las mejores decisiones
+                        en el desarrollo y crecimiento de tu presencia digital.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Análisis de competencia</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Estrategias de crecimiento digital</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Recomendaciones de tecnología</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Planificación de proyectos</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-800 text-white py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">
+                ¿Listo para <span class="text-yellow-300">Transformar tu Negocio</span> en el mundo digital?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                No esperes más. Es hora de llevar tu marca al siguiente nivel con una presencia digital impactante y funcional.
+                ¡Conversemos sobre tu visión!
+            </p>
+            <a href="index.html#contacto" class="bg-white text-blue-800 hover:bg-gray-200 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Contáctanos Hoy Mismo
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <p>© 2025 COMVENIM. Todos los derechos reservados.</p>
+                <a href="#" class="hover:text-white transition mr-4">Política de Privacidad</a>
+                <a href="#" class="hover:text-white transition">Términos de Servicio</a>
+            </div>
+            </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerIcon = document.querySelector('.burger-menu-icon');
+            const navMenu = document.querySelector('.nav-menu');
+
+            burgerIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
