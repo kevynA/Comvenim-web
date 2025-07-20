@@ -71,6 +71,14 @@
             transition: transform 0.3s ease-out; /* Smooth transition */
         }
         @media (max-width: 768px) {
+    .nav-menu {
+        /* ... otras propiedades ... */
+        overflow-y: auto;
+        height: calc(100vh - 64px); /* Ajusta '64px' a la altura de tu header */
+        /* ... otras propiedades ... */
+    }
+}
+        @media (max-width: 768px) {
             .nav-menu {
                 display: flex;
                 flex-direction: column;
