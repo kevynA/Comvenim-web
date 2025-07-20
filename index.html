@@ -1,264 +1,500 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>COMVENIM - Descubre el poder de la innovación</title>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
+
         body {
+
             font-family: 'Inter', sans-serif;
+
             scroll-behavior: smooth; /* Smooth scrolling */
+
         }
+
         .hero-section {
+
             background-image: url('ChatGPT Image 18 jul 2025, 15_24_40.png'); /* Placeholder, replace with actual image */
+
             background-size: cover;
+
             background-position: center;
+
             background-attachment: fixed; /* Parallax effect */
+
             opacity: 0; /* Initial state for fade-in */
+
             animation: fadeIn 1.5s forwards; /* Fade-in animation */
+
         }
+
         @keyframes fadeIn {
+
             from { opacity: 0; }
+
             to { opacity: 1; }
+
         }
+
         .plan-card:hover {
+
             transform: scale(1.05);
+
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
             border-color: #2962FF; /* Azul tecnológico */
+
         }
+
         .burger-menu-icon {
+
             display: none; /* Hidden by default on desktop */
+
         }
+
         @media (max-width: 768px) {
+
             .nav-menu {
+
                 display: none;
+
                 flex-direction: column;
+
                 width: 100%;
+
                 background-color: #111827; /* Coincide con el header oscuro */
+
                 position: absolute;
+
                 top: 64px; /* Adjust based on header height */
+
                 left: 0;
+
                 z-index: 1000;
+
             }
+
             .nav-menu.active {
+
                 display: flex;
+
             }
+
             .burger-menu-icon {
+
                 display: block;
+
             }
+
         }
+
         /* Estilos para el botón flotante de WhatsApp */
+
 .whatsapp-float {
+
   position: fixed;
+
   width: 60px;
+
   height: 60px;
+
   bottom: 40px;
+
   right: 40px;
+
   background-color: #25d366;
+
   color: #fff;
+
   border-radius: 50px;
+
   text-align: center;
+
   font-size: 30px;
+
   box-shadow: 2px 2px 3px #999;
+
   z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+
   display: flex; /* Para centrar el ícono */
+
   justify-content: center;
+
   align-items: center;
+
   transition: all 0.3s ease;
+
 }
+
+
 
 .whatsapp-float:hover {
+
   transform: scale(1.1);
+
   box-shadow: 3px 3px 5px #777;
+
 }
+
+
 
 @media (max-width: 768px) {
+
   .whatsapp-float {
+
     width: 50px;
+
     height: 50px;
+
     bottom: 20px;
+
     right: 20px;
+
     font-size: 25px;
+
   }
+
 }
+
     </style>
+
 </head>
+
 <body class="bg-gray-900 text-gray-300">
 
+
+
     <header class="bg-gray-900 text-white p-4 shadow-lg fixed w-full z-50">
+
         <div class="container mx-auto flex justify-between items-center">
+
             <div class="flex items-center">
+
                 <img src="Convenim - Logo en letras blancas - sin fondo.png" alt="COMVENIM" class="h-10 mr-3">
+
                 <span class="text-2xl font-bold text-white">COMVENIM</span>
+
             </div>
+
             <nav class="nav-menu">
+
                 <ul class="flex space-x-6 md:flex-row flex-col md:space-y-0 space-y-4 p-4 md:p-0">
+
                     <li><a href="#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+
                     <li><a href="servicios.html" class="hover:text-blue-400 transition">Servicios</a></li>
-                    <li><a href="#agendar-cita" class="hover:text-blue-400 transition">Agendar Cita</a></li>
+
                     <li><a href="#planes" class="hover:text-blue-400 transition">Planes</a></li>
+
                     <li><a href="#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+
+                  <li><a href="#agendar-cita" class="hover:text-blue-400 transition">Agendar Cita</a></li>
+
                 </ul>
+
             </nav>
+
             <div class="burger-menu-icon md:hidden cursor-pointer text-2xl">
+
                 <i class="fas fa-bars"></i>
+
             </div>
+
         </div>
+
     </header>
 
+
+
     <section id="inicio" class="hero-section text-white flex items-center justify-center h-screen text-center">
+
         <div class="bg-black bg-opacity-60 p-8 rounded-lg animate-fade-in">
+
             <h1 class="text-5xl font-extrabold mb-4 leading-tight">Descubre el poder de la <span class="text-blue-400">innovación</span> en un mundo conectado.</h1>
+
             <p class="text-xl mb-8">Soluciones tecnológicas que impulsan tu futuro.</p>
+
             <a href="#planes" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Explora Nuestros Planes</a>
+
         </div>
+
     </section>
+
+
 
     <section id="servicios" class="py-20 bg-gray-800">
+
         <div class="container mx-auto px-4 text-center">
+
             <h2 class="text-4xl font-bold text-white mb-12">Nuestros Servicios</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
                 <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+
     <i class="fas fa-code text-blue-500 text-5xl mb-4"></i>
+
     <h3 class="text-2xl font-bold mb-3 text-white">
+
         <a href="desarrollo-web.html" class="hover:underline">Desarrollo Web</a>
+
     </h3>
+
     <p class="text-gray-400">Creación de sitios web a medida, modernos y funcionales.</p>
+
 </div>
+
                 <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+
                     <i class="fas fa-cogs text-green-500 text-5xl mb-4"></i>
+
                     <h3 class="text-2xl font-bold mb-3 text-white">Automatización</h3>
+
                     <p class="text-gray-400">Optimización de procesos para mayor eficiencia.</p>
+
                 </div>
+
                 <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+
                     <i class="fas fa-bullhorn text-yellow-500 text-5xl mb-4"></i>
+
                     <h3 class="text-2xl font-bold mb-3 text-white">Marketing Digital</h3>
+
                     <p class="text-gray-400">Estrategias y posicionamiento para potenciar tu presencia online.</p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="agendar-cita" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-white mb-12">Agenda una Cita</h2>
-            <p class="text-xl text-gray-400 mb-8">Elige el mejor momento para discutir tus necesidades y cómo COMVENIM puede ayudarte.</p>
-            <div class="max-w-3xl mx-auto bg-gray-700 p-6 rounded-lg shadow-xl">
-                <iframe 
-                    src="https://koalendar.com/e/cita-virtual" 
-                    frameborder="0" 
-                    style="width:100%; height:600px; border:none;"
-                    title="Formulario de Citas Koalendar">
-                </iframe>
-                <p class="text-sm text-gray-500 mt-4">Powered by Koalendar</p>
-            </div>
-        </div>
-    </section>
+<iframe 
+    src="https://koalendar.com/e/cita-virtual" 
+    frameborder="0" 
+    style="width:100%; height:600px; border:none;"
+    title="Formulario de Citas Koalendar">
+</iframe>
 
     <section id="planes" class="py-16 bg-gray-900">
+
         <div class="container mx-auto px-4">
+
             <h2 class="text-4xl font-bold text-center mb-12 text-white">Nuestros Planes</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
                 <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
+
                     <h3 class="text-3xl font-bold text-white mb-4">Básico</h3>
+
                     <p class="text-gray-400 mb-6 italic">Ideal para startups.</p>
+
                     <ul class="space-y-3 mb-6 text-gray-300">
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Sitio web de 5 páginas</li>
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Hosting por 1 año</li>
+
                         <li class="flex items-center text-gray-500"><i class="fas fa-times text-red-500 mr-3"></i> Sin soporte 24/7</li>
+
                     </ul>
+
                     <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Básico</button>
+
                 </div>
 
+
+
                 <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
+
                     <h3 class="text-3xl font-bold text-white mb-4">Estándar</h3>
+
                     <p class="text-gray-400 mb-6 italic">Para negocios en crecimiento.</p>
+
                     <ul class="space-y-3 mb-6 text-gray-300">
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Sitio web + blog</li>
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> SEO básico</li>
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Soporte prioritario</li>
+
                     </ul>
+
                     <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Estándar</button>
+
                 </div>
 
+
+
                 <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
+
                     <h3 class="text-3xl font-bold text-white mb-4">Premium</h3>
+
                     <p class="text-gray-400 mb-6 italic">Soluciones empresariales.</p>
+
                     <ul class="space-y-3 mb-6 text-gray-300">
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Diseño personalizado</li>
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Tienda online</li>
+
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Soporte VIP</li>
+
                     </ul>
+
                     <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Premium</button>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <section id="contacto" class="py-20 bg-gray-900 text-white">
+
         <div class="container mx-auto px-4 text-center">
+
             <h2 class="text-4xl font-bold mb-12">Encuéntranos en Redes</h2>
+
             <p class="text-xl mb-10">Síguenos para no perderte nuestras últimas novedades y contenido exclusivo.</p>
 
+
+
             <div class="flex flex-wrap justify-center gap-8 max-w-2xl mx-auto">
+
                 <a href="https://www.tiktok.com/@comvenim" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-white">
+
                     <i class="fab fa-tiktok text-5xl mb-3"></i>
+
                     <span class="text-lg font-semibold">TikTok</span>
+
                 </a>
+
                 <a href="https://www.instagram.com/comvenim/" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-pink-500">
+
                     <i class="fab fa-instagram text-5xl mb-3"></i>
+
                     <span class="text-lg font-semibold">Instagram</span>
+
                 </a>
+
                 <a href="https://www.facebook.com/profile.php?id=61578571285624" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-blue-500">
+
                     <i class="fab fa-facebook-f text-5xl mb-3"></i>
+
                     <span class="text-lg font-semibold">Facebook</span>
+
                 </a>
+
                 <a href="https://www.youtube.com/@Comvenim" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-red-600">
+
                     <i class="fab fa-youtube text-5xl mb-3"></i>
+
                     <span class="text-lg font-semibold">YouTube</span>
+
                 </a>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <a
+
   href="https://wa.me/593992648781?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20sus%20servicios."
+
   class="whatsapp-float"
+
   target="_blank"
+
 >
+
   <i class="fab fa-whatsapp"></i>
+
 </a>
 
+
+
     <footer class="bg-gray-800 text-gray-400 py-8">
+
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+
             <div class="mb-4 md:mb-0">
+
                 <p>© 2025 COMVENIM. Todos los derechos reservados.</p>
+
                 <a href="#" class="hover:text-white transition mr-4">Política de Privacidad</a>
+
                 <a href="#" class="hover:text-white transition">Términos de Servicio</a>
+
             </div>
+
         </div>
+
     </footer>
 
+
+
     <script>
+
         document.addEventListener('DOMContentLoaded', () => {
+
             const burgerIcon = document.querySelector('.burger-menu-icon');
+
             const navMenu = document.querySelector('.nav-menu');
 
+
+
             burgerIcon.addEventListener('click', () => {
+
                 navMenu.classList.toggle('active');
+
             });
 
+
+
             navMenu.querySelectorAll('a').forEach(link => {
+
                 link.addEventListener('click', () => {
+
                     if (navMenu.classList.contains('active')) {
+
                         navMenu.classList.remove('active');
+
                     }
+
                 });
+
             });
+
         });
+
     </script>
+
 </body>
+
 </html>
