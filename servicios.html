@@ -8,110 +8,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .hero-services {
-            background-image: url('https://via.placeholder.com/1920x600/1F2937/D1D5DB?text=NUESTROS+SERVICIOS'); /* REEMPLAZA CON UNA IMAGEN RELEVANTE */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero-services::before {
-            content: "";
-            position: absolute;
-            top: 0;
+    /* ... Tus estilos existentes ... */
+
+    /* --- Menú Responsivo: Asegurando que se visualice completo --- */
+    .burger-menu-icon {
+        display: none; /* Oculto por defecto en escritorio */
+    }
+    .nav-menu {
+        transform: translateX(100%); /* Inicialmente fuera de pantalla a la derecha */
+        transition: transform 0.3s ease-out; /* Animación de deslizamiento */
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            /* Propiedades cruciales para que se vea completo y sea navegable */
+            display: flex; /* Muestra el menú como un flex container */
+            flex-direction: column; /* Organiza los ítems verticalmente */
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+            background-color: #111827; /* Fondo para que se vea claramente */
+            position: fixed; /* O 'absolute' si prefieres que se desplace con el scroll del cuerpo */
+            top: 64px; /* <--- ¡IMPORTANTE! Ajusta esto a la altura REAL de tu cabecera. */
+                       /* Si tu header mide 64px de alto, el menú comenzará justo debajo. */
             left: 0;
             right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor lectura del texto */
-            z-index: 1;
+            height: calc(100vh - 64px); /* <--- ¡IMPORTANTE! Calcula la altura restante de la pantalla */
+                                      /* 100vh = 100% de la altura de la ventana del navegador */
+                                      /* - 64px = restamos la altura de tu cabecera */
+            overflow-y: auto; /* <--- ¡CLAVE! Permite el desplazamiento vertical si el contenido excede la altura calculada. */
+            z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+            padding: 1rem 0; /* Un poco de padding arriba y abajo para que no esté pegado */
         }
-        .hero-services > div {
-            z-index: 2;
-            animation: fadeInScale 1s ease-out forwards;
+        .nav-menu.active {
+            transform: translateX(0); /* Desliza el menú a la vista */
         }
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Estilos para las tarjetas de servicio individuales */
-        .service-section-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .service-section-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-        }
-        .service-icon {
-            font-size: 4rem; /* Icono grande */
-            margin-bottom: 1.5rem;
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #60A5FA, #3B82F6); /* Azul de Tailwind */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* --- Menú Responsivo (duplicado del index.html para consistencia) --- */
         .burger-menu-icon {
-            display: none; /* Hidden by default on desktop */
+            display: block; /* Muestra el icono de hamburguesa en móvil */
         }
-        .nav-menu {
-            transform: translateX(100%); /* Start off-screen to the right */
-            transition: transform 0.3s ease-out; /* Smooth transition */
+        /* Estilos adicionales para los ítems del menú móvil */
+        .nav-menu ul {
+            width: 100%; /* Asegura que la lista ocupe todo el ancho del menú */
         }
-        @media (max-width: 768px) {
-    .nav-menu {
-        /* ... otras propiedades ... */
-        overflow-y: auto;
-        height: calc(100vh - 64px); /* Ajusta '64px' a la altura de tu header */
-        /* ... otras propiedades ... */
+        .nav-menu ul li a {
+            display: block; /* Hace que toda el área del link sea clickeable */
+            padding: 0.75rem 0; /* Padding vertical para cada ítem */
+            text-align: center; /* Centra el texto de los ítems */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador visual entre ítems */
+        }
+        .nav-menu ul li:last-child a {
+            border-bottom: none; /* Quita el separador del último ítem */
+        }
     }
-}
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #111827; /* Coincide con el header oscuro */
-                position: absolute;
-                top: 64px; /* Adjust to your header's height */
-                left: 0;
-                right: 0;
-                overflow-y: auto;
-                height: calc(100vh - 64px);
-                z-index: 1000;
-            }
-            .nav-menu.active {
-                transform: translateX(0); /* Slides into view */
-            }
-            .burger-menu-icon {
-                display: block; /* Show the burger icon on mobile */
-            }
-            .nav-menu ul {
-                width: 100%;
-            }
-            .nav-menu ul li a {
-                display: block;
-                padding: 1rem 0;
-                text-align: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .nav-menu ul li:last-child a {
-                border-bottom: none;
-            }
-        }
-    </style>
+    /* --- Fin Menú Responsivo --- */
+</style>
 </head>
 <body class="bg-gray-900 text-gray-300">
 
