@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMVENIM - Descubre el poder de la innovación</title>
+    <title>Desarrollo Web - COMVENIM: Tu Presencia Digital, Nuestra Innovación</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,70 +12,87 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        .hero-section {
-            background-image: url('ChatGPT Image 18 jul 2025, 15_24_40.png'); /* Placeholder, replace with actual image */
+        .hero-desarrollo {
+            background-image: url('URL_DE_IMAGEN_DE_FONDO_DESARROLLO_WEB.jpg'); /* ¡IMPORTANTE! Reemplaza con tu propia imagen */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
-            opacity: 0; /* Initial state for fade-in */
-            animation: fadeIn 1.5s forwards; /* Fade-in animation */
+            background-attachment: fixed;
+            min-height: 60vh; /* Altura más compacta para secciones internas */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .hero-desarrollo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor lectura del texto */
+            z-index: 1;
         }
-        .plan-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: #2962FF; /* Azul tecnológico */
+        .hero-desarrollo > div {
+            z-index: 2;
         }
-        /* -- CORRECCIONES PARA EL MENÚ RESPONSIVO -- */
+        .card-service {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- MENÚ RESPONSIVO CSS CORREGIDO --- */
         .burger-menu-icon {
             display: none; /* Hidden by default on desktop */
         }
         .nav-menu {
-            /* Por defecto, el menú está oculto en móvil */
-            display: none;
+            /* Por defecto, el menú está oculto en desktop con Tailwind,
+               pero necesitamos manejar su estado en móvil. */
+            /* En mobile, lo ocultamos por posición y lo mostramos con 'active' */
+            transform: translateX(100%); /* Start off-screen to the right */
+            transition: transform 0.3s ease-out; /* Smooth transition */
         }
 
         @media (max-width: 768px) {
             .nav-menu {
-                /* Estos estilos se aplican por defecto en móvil para preparar el menú */
+                /* Estos estilos se aplican en móvil para el menú desplegable */
+                display: flex; /* Always flex in mobile context, then rely on transform */
                 flex-direction: column;
                 width: 100%;
                 background-color: #111827; /* Coincide con el header oscuro */
                 position: absolute; /* O 'fixed' si quieres que se desplace con el scroll */
-                top: 64px; /* Ajusta esto a la altura de tu header para que empiece justo debajo */
+                top: 64px; /* Adjust this to your header's height */
                 left: 0;
-                /* Agregado para que ocupe todo el ancho y no haya scroll horizontal */
-                right: 0;
-                overflow-y: auto; /* Para permitir scroll si el contenido es largo */
-                height: calc(100vh - 64px); /* Ocupa el resto de la altura de la ventana */
-                z-index: 1000;
-                /* Animación de entrada */
-                transform: translateX(100%); /* Inicialmente fuera de la pantalla a la derecha */
-                transition: transform 0.3s ease-out; /* Transición suave */
+                right: 0; /* Ensures full width */
+                overflow-y: auto; /* Allows scrolling if content is too long */
+                height: calc(100vh - 64px); /* Fills remaining viewport height */
+                z-index: 1000; /* Ensure it's above other content */
             }
-            /* Cuando el menú está activo, se muestra y se desliza */
             .nav-menu.active {
-                display: flex; /* Vuelve a flex para que sea visible */
-                transform: translateX(0); /* Se desliza a su posición normal */
+                transform: translateX(0); /* Slides into view */
             }
             .burger-menu-icon {
-                display: block; /* Muestra el icono de hamburguesa en móvil */
+                display: block; /* Show the burger icon on mobile */
             }
-            /* Asegura que los enlaces del menú sean grandes y tocables */
+            /* Styling for menu links for better touch experience */
+            .nav-menu ul {
+                width: 100%; /* Ensure the UL takes full width of the nav-menu */
+            }
             .nav-menu ul li a {
-                display: block; /* Para que el área de clic sea todo el ancho */
-                padding: 1rem 0; /* Más padding para facilitar el toque */
-                text-align: center; /* Centra el texto */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador entre enlaces */
+                display: block; /* Make the whole area clickable */
+                padding: 1rem 0; /* More padding for easier tapping */
+                text-align: center; /* Center the text */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator lines */
             }
             .nav-menu ul li:last-child a {
-                border-bottom: none; /* Elimina el borde del último elemento */
+                border-bottom: none; /* No border for the last item */
             }
         }
-        /* -- FIN DE CORRECCIONES -- */
+        /* --- FIN CSS CORREGIDO --- */
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -84,14 +101,14 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <img src="Convenim - Logo en letras blancas - sin fondo.png" alt="COMVENIM" class="h-10 mr-3">
-                <span class="text-2xl font-bold text-white">COMVENIM</span>
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-blue-400 transition">COMVENIM</a>
             </div>
             <nav class="nav-menu">
                 <ul class="flex space-x-6 md:flex-row flex-col md:space-y-0 space-y-4 p-4 md:p-0">
-                    <li><a href="#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
-                    <li><a href="#servicios" class="hover:text-blue-400 transition">Servicios</a></li>
-                    <li><a href="#planes" class="hover:text-blue-400 transition">Planes</a></li>
-                    <li><a href="#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+                    <li><a href="index.html#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+                    <li><a href="index.html#servicios" class="hover:text-blue-400 transition">Servicios</a></li>
+                    <li><a href="index.html#planes" class="hover:text-blue-400 transition">Planes</a></li>
+                    <li><a href="index.html#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
                 </ul>
             </nav>
             <div class="burger-menu-icon md:hidden cursor-pointer text-2xl">
@@ -100,106 +117,155 @@
         </div>
     </header>
 
-    <section id="inicio" class="hero-section text-white flex items-center justify-center h-screen text-center">
-        <div class="bg-black bg-opacity-60 p-8 rounded-lg animate-fade-in">
-            <h1 class="text-5xl font-extrabold mb-4 leading-tight">Descubre el poder de la <span class="text-blue-400">innovación</span> en un mundo conectado.</h1>
-            <p class="text-xl mb-8">Soluciones tecnológicas que impulsan tu futuro.</p>
-            <a href="#planes" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Explora Nuestros Planes</a>
+    <section class="hero-desarrollo text-white pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-in-up">
+                Desarrollo Web: <span class="text-blue-400">Tu Universo Digital Comienza Aquí.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                No solo creamos sitios web; construimos experiencias que capturan, conectan y convierten.
+                En 2025, tu presencia online es tu activo más valioso.
+            </p>
+            <a href="#nuestros-servicios-detalle" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Explora lo que podemos crear para ti
+            </a>
         </div>
     </section>
 
-    <section id="servicios" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-white mb-12">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                    <i class="fas fa-code text-blue-500 text-5xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-white">
-                        <a href="desarrollo-web.html" class="hover:underline">Desarrollo Web</a>
-                    </h3>
-                    <p class="text-gray-400">Creación de sitios web a medida, modernos y funcionales.</p>
-                </div>
-                <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                    <i class="fas fa-cogs text-green-500 text-5xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Automatización</h3>
-                    <p class="text-gray-400">Optimización de procesos para mayor eficiencia.</p>
-                </div>
-                <div class="bg-gray-700 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                    <i class="fas fa-bullhorn text-yellow-500 text-5xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Marketing Digital</h3>
-                    <p class="text-gray-400">Estrategias y posicionamiento para potenciar tu presencia online.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="planes" class="py-16 bg-gray-900">
+    <div class="bg-gray-800 py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Nuestros Planes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
-                    <h3 class="text-3xl font-bold text-white mb-4">Básico</h3>
-                    <p class="text-gray-400 mb-6 italic">Ideal para startups.</p>
-                    <ul class="space-y-3 mb-6 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Sitio web de 5 páginas</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Hosting por 1 año</li>
-                        <li class="flex items-center text-gray-500"><i class="fas fa-times text-red-500 mr-3"></i> Sin soporte 24/7</li>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-4xl font-bold mb-6 text-white">
+                        ¿Por qué tu negocio necesita una <span class="text-blue-400">presencia digital sólida</span>?
+                    </h2>
+                    <p class="text-lg mb-4 leading-relaxed">
+                        En la era actual, si no estás online, simplemente no existes para una gran parte de tus clientes potenciales.
+                        Una página web no es solo un escaparate; es tu oficina 24/7, tu tarjeta de presentación global y tu herramienta de ventas más poderosa.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Te ayudamos a destacar, generando confianza y credibilidad con un diseño profesional y funcional que habla directamente a tu audiencia.
+                        Es la inversión más inteligente para el crecimiento y la visibilidad de tu marca.
+                    </p>
+                </div>
+                <div>
+                    <img src="URL_DE_IMAGEN_DE_EQUIPO_TRABAJANDO.jpg" alt="Equipo trabajando en desarrollo web" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="nuestros-servicios-detalle" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-12">Nuestros Servicios de Desarrollo Web a tu Medida</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-blue-600">
+                    <i class="fas fa-desktop text-blue-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Páginas Web Profesionales</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Tu tarjeta de presentación digital. Creamos sitios web corporativos y personales que impactan, informan y construyen tu marca.
+                        Diseños modernos, adaptables a cualquier dispositivo y optimizados para el mejor rendimiento.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Diseño 100% responsivo</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización SEO básica</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Integración con redes sociales</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Galería de imágenes y contacto</li>
                     </ul>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Básico</button>
                 </div>
 
-                <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
-                    <h3 class="text-3xl font-bold text-white mb-4">Estándar</h3>
-                    <p class="text-gray-400 mb-6 italic">Para negocios en crecimiento.</p>
-                    <ul class="space-y-3 mb-6 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Sitio web + blog</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> SEO básico</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Soporte prioritario</li>
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-green-600">
+                    <i class="fas fa-globe text-green-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Sitios Web a Medida</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Más allá de lo básico. Desarrollamos sitios con funcionalidades avanzadas, bases de datos, sistemas de reserva, foros o portales interactivos.
+                        Soluciones únicas para necesidades específicas de tu negocio.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Funcionalidades personalizadas</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Integración con APIs de terceros</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Gestión de usuarios y contenidos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Seguridad y escalabilidad garantizadas</li>
                     </ul>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Estándar</button>
                 </div>
 
-                <div class="plan-card bg-gray-800 p-8 rounded-xl shadow-md transition duration-300 border-l-4 border-blue-500">
-                    <h3 class="text-3xl font-bold text-white mb-4">Premium</h3>
-                    <p class="text-gray-400 mb-6 italic">Soluciones empresariales.</p>
-                    <ul class="space-y-3 mb-6 text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Diseño personalizado</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Tienda online</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Soporte VIP</li>
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-purple-600">
+                    <i class="fas fa-shopping-cart text-purple-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Tiendas Digitales (E-commerce)</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Abre tu negocio al mundo 24/7. Creamos tiendas online robustas, seguras y fáciles de gestionar,
+                        listas para vender tus productos o servicios de forma eficiente.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Catálogo de productos ilimitado</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Múltiples pasarelas de pago (PayPal, Stripe, etc.)</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Gestión de inventario y pedidos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Carrito de compras intuitivo</li>
                     </ul>
-                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">Contratar Plan Premium</button>
                 </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-yellow-600">
+                    <i class="fas fa-tools text-yellow-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Mantenimiento y Soporte</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Tu sitio web siempre actualizado y seguro. Ofrecemos planes de mantenimiento para garantizar el óptimo funcionamiento,
+                        la seguridad y la relevancia de tu plataforma digital.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Actualizaciones de seguridad</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Respaldo de información</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Monitoreo de rendimiento</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Soporte técnico especializado</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-red-600">
+                    <i class="fas fa-chart-line text-red-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Optimización SEO</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Haz que tus clientes te encuentren. Mejoramos la visibilidad de tu sitio web en los motores de búsqueda
+                        para atraer más tráfico orgánico y clientes potenciales.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Investigación de palabras clave</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización on-page y técnica</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Creación de contenido estratégico</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Monitoreo y reportes de rendimiento</li>
+                    </ul>
+                </div>
+
+                <div class="card-service bg-gray-800 p-8 rounded-xl shadow-lg border-b-4 border-teal-600">
+                    <i class="fas fa-lightbulb text-teal-500 text-6xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Consultoría Digital</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Asesoramiento experto para tu estrategia online. Te guiamos para tomar las mejores decisiones
+                        en el desarrollo y crecimiento de tu presencia digital.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Análisis de competencia</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Estrategias de crecimiento digital</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Recomendaciones de tecnología</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Planificación de proyectos</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-12">Encuéntranos en Redes</h2>
-            <p class="text-xl mb-10">Síguenos para no perderte nuestras últimas novedades y contenido exclusivo.</p>
-
-            <div class="flex flex-wrap justify-center gap-8 max-w-2xl mx-auto">
-                <a href="https://www.tiktok.com/@comvenim" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-white">
-                    <i class="fab fa-tiktok text-5xl mb-3"></i>
-                    <span class="text-lg font-semibold">TikTok</span>
-                </a>
-                <a href="https://www.instagram.com/comvenim/" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-pink-500">
-                    <i class="fab fa-instagram text-5xl mb-3"></i>
-                    <span class="text-lg font-semibold">Instagram</span>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61578571285624" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-blue-500">
-                    <i class="fab fa-facebook-f text-5xl mb-3"></i>
-                    <span class="text-lg font-semibold">Facebook</span>
-                </a>
-                <a href="#" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-red-600">
-                    <i class="fab fa-youtube text-5xl mb-3"></i>
-                    <span class="text-lg font-semibold">YouTube</span>
-                </a>
-                <a href="https://wa.me/593992648781" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 transform text-green-500">
-                    <i class="fab fa-whatsapp text-5xl mb-3"></i>
-                    <span class="text-lg font-semibold">WhatsApp</span>
-                </a>
-            </div>
+    <section class="bg-blue-800 text-white py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">
+                ¿Listo para <span class="text-yellow-300">Transformar tu Negocio</span> en el mundo digital?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                No esperes más. Es hora de llevar tu marca al siguiente nivel con una presencia digital impactante y funcional.
+                ¡Conversemos sobre tu visión!
+            </p>
+            <a href="index.html#contacto" class="bg-white text-blue-800 hover:bg-gray-200 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Contáctanos Hoy Mismo
+            </a>
         </div>
     </section>
 
@@ -220,17 +286,17 @@
 
             burgerIcon.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
-                // Opcional: Si quieres cambiar el icono de hamburguesa a una 'X' al abrir
+                // Optional: Toggle the icon from bars to times (X)
                 burgerIcon.querySelector('i').classList.toggle('fa-bars');
                 burgerIcon.querySelector('i').classList.toggle('fa-times');
             });
 
-            // Cierra el menú cuando se hace clic en un enlace
+            // Close the menu when a link inside it is clicked
             navMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
-                        // Opcional: Vuelve el icono a hamburguesa al cerrar
+                        // Optional: Reset icon to bars when menu is closed
                         burgerIcon.querySelector('i').classList.remove('fa-times');
                         burgerIcon.querySelector('i').classList.add('fa-bars');
                     }
