@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Servicios - COMVENIM: Soluciones Digitales Integrales</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-services {
+            background-image: url('https://via.placeholder.com/1920x600/1F2937/D1D5DB?text=NUESTROS+SERVICIOS'); /* REEMPLAZA CON UNA IMAGEN RELEVANTE */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-services::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor lectura del texto */
+            z-index: 1;
+        }
+        .hero-services > div {
+            z-index: 2;
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Estilos para las tarjetas de servicio individuales */
+        .service-section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .service-section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+        .service-icon {
+            font-size: 4rem; /* Icono grande */
+            margin-bottom: 1.5rem;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60A5FA, #3B82F6); /* Azul de Tailwind */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Menú Responsivo (duplicado del index.html para consistencia) --- */
+        .burger-menu-icon {
+            display: none; /* Hidden by default on desktop */
+        }
+        .nav-menu {
+            transform: translateX(100%); /* Start off-screen to the right */
+            transition: transform 0.3s ease-out; /* Smooth transition */
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background-color: #111827; /* Coincide con el header oscuro */
+                position: absolute;
+                top: 64px; /* Adjust to your header's height */
+                left: 0;
+                right: 0;
+                overflow-y: auto;
+                height: calc(100vh - 64px);
+                z-index: 1000;
+            }
+            .nav-menu.active {
+                transform: translateX(0); /* Slides into view */
+            }
+            .burger-menu-icon {
+                display: block; /* Show the burger icon on mobile */
+            }
+            .nav-menu ul {
+                width: 100%;
+            }
+            .nav-menu ul li a {
+                display: block;
+                padding: 1rem 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .nav-menu ul li:last-child a {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="bg-gray-900 text-white p-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Convenim - Logo en letras blancas - sin fondo.png" alt="COMVENIM" class="h-10 mr-3">
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-blue-400 transition">COMVENIM</a>
+            </div>
+            <nav class="nav-menu">
+                <ul class="flex space-x-6 md:flex-row flex-col md:space-y-0 space-y-4 p-4 md:p-0">
+                    <li><a href="index.html#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+                    <li><a href="#servicios-detail" class="hover:text-blue-400 transition">Servicios</a></li>
+                    <li><a href="index.html#planes" class="hover:text-blue-400 transition">Planes</a></li>
+                    <li><a href="index.html#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu-icon md:hidden cursor-pointer text-2xl">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-services text-white pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-in-up">
+                Nuestros <span class="text-blue-400">Servicios Digitales</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Transformando ideas en realidades digitales, impulsando tu éxito en el mundo conectado.
+            </p>
+            <a href="#servicios-detail" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Explora Todas Nuestras Soluciones
+            </a>
+        </div>
+    </section>
+
+    <section id="servicios-detail" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-12">Cómo COMVENIM Impulsa Tu Negocio</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-gray-700 p-8 rounded-lg shadow-xl">
+                <div class="text-left">
+                    <i class="service-icon fas fa-code text-blue-400"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Desarrollo Web: <span class="text-gradient">Tu Universo Digital Comienza Aquí</span></h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        En la era digital actual, tu sitio web es la piedra angular de tu presencia online. No es solo una página, es tu escaparate global 24/7, tu herramienta de ventas más potente y el reflejo de tu marca. En COMVENIM, construimos experiencias digitales que no solo se ven espectaculares, sino que capturan, conectan y convierten a tus visitantes en clientes leales.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6 text-lg">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Páginas Web Profesionales:** Diseños responsivos y optimizados para impactar.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Sitios Web a Medida:** Soluciones únicas con funcionalidades avanzadas.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Tiendas Digitales (E-commerce):** Vende tus productos globalmente, de forma segura y sencilla.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Mantenimiento y Soporte:** Tu sitio siempre seguro, rápido y actualizado.</li>
+                    </ul>
+                    <a href="desarrollo-web.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Ver Detalles de Desarrollo Web
+                    </a>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/600x400/374151/D1D5DB?text=IMAGEN+DESARROLLO+WEB" alt="Imagen de Desarrollo Web" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-gray-700 p-8 rounded-lg shadow-xl">
+                <div class="order-2 lg:order-1">
+                    <img src="https://via.placeholder.com/600x400/374151/D1D5DB?text=IMAGEN+AUTOMATIZACION" alt="Imagen de Automatización" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+                <div class="text-left order-1 lg:order-2">
+                    <i class="service-icon fas fa-cogs text-green-400"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Automatización: <span class="text-gradient">Eficiencia que Transforma Tu Negocio</span></h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        Libera el verdadero potencial de tu empresa. La automatización es la clave para eliminar tareas repetitivas, reducir errores y permitir que tu equipo se concentre en actividades de mayor valor. En COMVENIM, implementamos soluciones inteligentes que optimizan tus flujos de trabajo y disparan tu productividad.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6 text-lg">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Automatización de Marketing:** Conecta y nutre a tus clientes de forma inteligente.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Automatización de Procesos (RPA):** Optimiza operaciones internas, de la entrada de datos a la facturación.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Integración de Sistemas:** Unifica tus plataformas para un flujo de datos sin interrupciones.</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Más sobre Automatización
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-gray-700 p-8 rounded-lg shadow-xl">
+                <div class="text-left">
+                    <i class="service-icon fas fa-bullhorn text-yellow-400"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Marketing Digital: <span class="text-gradient">Visibilidad que Convierte Clientes</span></h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        En el vasto panorama digital, ser encontrado es crucial. Nuestro equipo de expertos en marketing digital está dedicado a crear estrategias personalizadas que no solo aumentan tu visibilidad, sino que también atraen a tu cliente ideal y transforman a los visitantes en clientes leales. Multiplica tu alcance y tu impacto.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6 text-lg">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Optimización SEO:** Posiciona tu marca en la cima de los motores de búsqueda.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Publicidad Online (SEM & Social Ads):** Campañas precisas para el máximo ROI.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Marketing de Contenidos:** Atrae y deleita a tu audiencia con contenido de valor.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Gestión de Redes Sociales:** Construye una comunidad vibrante y fortalece tu marca.</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Descubre Estrategias de Marketing
+                    </a>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/600x400/374151/D1D5DB?text=IMAGEN+MARKETING+DIGITAL" alt="Imagen de Marketing Digital" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-gray-700 p-8 rounded-lg shadow-xl">
+                <div class="order-2 lg:order-1">
+                    <img src="https://via.placeholder.com/600x400/374151/D1D5DB?text=IMAGEN+CONSULTORIA" alt="Imagen de Consultoría Digital" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
+                </div>
+                <div class="text-left order-1 lg:order-2">
+                    <i class="service-icon fas fa-lightbulb text-purple-400"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Consultoría Digital: <span class="text-gradient">La Brújula para Tu Éxito Digital</span></h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        El panorama digital es complejo y está en constante evolución. Con COMVENIM, no estás solo. Nuestros expertos te guiarán a través de este ecosistema, identificando las mejores oportunidades y armándote con el conocimiento para tomar decisiones estratégicas que aseguren tu relevancia y crecimiento a largo plazo.
+                    </p>
+                    <ul class="text-left text-gray-300 space-y-2 mb-6 text-lg">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Estrategia Digital Integral:** Define un camino claro hacia tus objetivos.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Análisis de Rendimiento & Auditorías:** Optimiza tu presencia con datos concretos.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Selección de Tecnología:** Elige las herramientas adecuadas para tu negocio.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> **Formación & Capacitación:** Empodera a tu equipo con conocimiento experto.</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Consulta con Nuestros Expertos
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-blue-800 text-white py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">
+                ¿Listo para <span class="text-yellow-300">Transformar tu Negocio</span> con COMVENIM?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                No importa tu sector o tamaño, tenemos la solución digital que necesitas. ¡Conversemos sobre tus metas y cómo podemos hacerlas realidad!
+            </p>
+            <a href="index.html#contacto" class="bg-white text-blue-800 hover:bg-gray-200 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Agenda una Consulta Gratuita
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <p>© 2025 COMVENIM. Todos los derechos reservados.</p>
+                <a href="#" class="hover:text-white transition mr-4">Política de Privacidad</a>
+                <a href="#" class="hover:text-white transition">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerIcon = document.querySelector('.burger-menu-icon');
+            const navMenu = document.querySelector('.nav-menu');
+
+            burgerIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                burgerIcon.querySelector('i').classList.toggle('fa-bars');
+                burgerIcon.querySelector('i').classList.toggle('fa-times');
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        burgerIcon.querySelector('i').classList.remove('fa-times');
+                        burgerIcon.querySelector('i').classList.add('fa-bars');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
